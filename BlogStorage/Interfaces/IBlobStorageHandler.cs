@@ -10,6 +10,7 @@ namespace BlogStorage.Interfaces
 {
     public interface IBlobStorageHandler
     {
-        CloudBlobContainer GetBlobContainer ();
+        void LogDummyInfo();
+        void LogDummyException();
     }
 }

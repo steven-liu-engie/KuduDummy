@@ -1,6 +1,9 @@
 using System;
+using BlogStorage.Implementations;
+using BlogStorage.Interfaces;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
+using UnityLog4NetExtension.Log4Net;
 
 namespace KuduDummy.App_Start
 {
@@ -37,6 +40,12 @@ namespace KuduDummy.App_Start
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
+
+            //Log4Net
+            container.AddNewExtension<Log4NetExtension>();
+
+            //Common IOC
+            container.RegisterType<IBlobStorageHandler, BlobStorageHandler>();
         }
     }
 }
